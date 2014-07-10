@@ -157,7 +157,9 @@ class PaginatedList(PaginatedListBase):
             self.__nextUrl,
             parameters=self.__nextParams
         )
-
+        if not data : 
+            data = []
+            
         self.__nextUrl = None
         if len(data) > 0:
             links = self.__parseLinkHeader(headers)
